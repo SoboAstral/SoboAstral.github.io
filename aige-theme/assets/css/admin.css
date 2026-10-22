@@ -1,0 +1,412 @@
+/* ==========================================================================
+   AIGE - Area Riservata Amministrazione (Owner-Only Dashboard)
+   Stili dedicati al pannello di controllo
+   ========================================================================== */
+
+.admin-body {
+  background-color: #070e17;
+  color: #e2e8f0;
+  font-family: var(--font-sans);
+  min-height: 100vh;
+}
+
+/* Schermata Login Gate */
+.login-screen {
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at center, #0f2744 0%, #060e1a 100%);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+  padding: 1.5rem;
+}
+
+.login-card {
+  background: rgba(16, 32, 57, 0.95);
+  border: 1px solid var(--gold-border);
+  border-radius: var(--radius-lg);
+  padding: 3rem 2.5rem;
+  width: 100%;
+  max-width: 440px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), var(--shadow-gold);
+  text-align: center;
+  backdrop-filter: blur(16px);
+}
+
+.login-emblem {
+  width: 64px;
+  height: 64px;
+  border-radius: 50%;
+  background: linear-gradient(135deg, #0f2744 0%, #1e4b7a 100%);
+  border: 2px solid var(--gold-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.8rem;
+  color: var(--gold-light);
+  margin: 0 auto 1.5rem auto;
+  box-shadow: var(--shadow-gold);
+}
+
+.login-card h2 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.5rem;
+}
+
+.login-card p {
+  font-size: 0.92rem;
+  color: var(--text-muted);
+  margin-bottom: 2rem;
+}
+
+.login-hint {
+  margin-top: 1.5rem;
+  font-size: 0.82rem;
+  color: #94a3b8;
+  background: rgba(255, 255, 255, 0.04);
+  padding: 0.6rem;
+  border-radius: var(--radius-sm);
+  border: 1px dashed rgba(255, 255, 255, 0.1);
+}
+
+/* Header Admin Dashboard */
+.admin-navbar {
+  background: #0b1728;
+  border-bottom: 1px solid var(--border-gold);
+  padding: 1rem 0;
+  position: sticky;
+  top: 0;
+  z-index: 100;
+}
+
+.admin-nav-inner {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.admin-nav-left {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+}
+
+.admin-badge {
+  background: rgba(212, 175, 55, 0.2);
+  color: var(--gold-light);
+  border: 1px solid var(--gold-border);
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.admin-nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+}
+
+/* Dashboard Content */
+.dashboard-wrapper {
+  padding: 3rem 0 5rem 0;
+}
+
+.admin-stats-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+  gap: 1.5rem;
+  margin-bottom: 2.5rem;
+}
+
+.stat-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 1.8rem;
+  display: flex;
+  align-items: center;
+  gap: 1.2rem;
+  transition: var(--transition);
+}
+
+.stat-card:hover {
+  border-color: var(--gold-border);
+}
+
+.stat-icon {
+  width: 50px;
+  height: 50px;
+  border-radius: var(--radius-sm);
+  background: rgba(212, 175, 55, 0.12);
+  border: 1px solid var(--gold-border);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.4rem;
+  color: var(--gold-light);
+  flex-shrink: 0;
+}
+
+.stat-info h6 {
+  font-size: 0.82rem;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  letter-spacing: 0.08em;
+  font-weight: 600;
+  margin-bottom: 0.3rem;
+}
+
+.stat-value {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #fff;
+  font-family: var(--font-serif);
+}
+
+/* Dashboard Tabs Navigation */
+.admin-tabs {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  border-bottom: 1px solid var(--border-subtle);
+  margin-bottom: 2.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.2rem;
+}
+
+.tab-btn {
+  background: none;
+  border: none;
+  color: var(--text-muted);
+  font-family: var(--font-sans);
+  font-size: 1rem;
+  font-weight: 600;
+  padding: 0.8rem 1.4rem;
+  cursor: pointer;
+  position: relative;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.6rem;
+  transition: var(--transition);
+  border-radius: var(--radius-sm) var(--radius-sm) 0 0;
+  white-space: nowrap;
+}
+
+.tab-btn:hover {
+  color: #fff;
+  background: rgba(255, 255, 255, 0.03);
+}
+
+.tab-btn.active {
+  color: var(--gold-light);
+  background: rgba(212, 175, 55, 0.08);
+}
+
+.tab-btn.active::after {
+  content: '';
+  position: absolute;
+  bottom: -1px;
+  left: 0;
+  width: 100%;
+  height: 3px;
+  background: var(--gold-primary);
+  border-radius: 3px 3px 0 0;
+}
+
+/* Tab Content Panels */
+.tab-pane {
+  display: none;
+}
+
+.tab-pane.active {
+  display: block;
+}
+
+.pane-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  gap: 1.2rem;
+  margin-bottom: 2rem;
+}
+
+.pane-title h3 {
+  font-size: 1.6rem;
+  color: #fff;
+  margin-bottom: 0.3rem;
+}
+
+.pane-title p {
+  font-size: 0.94rem;
+  color: var(--text-muted);
+}
+
+/* Tabelle e Liste di Gestione */
+.admin-table-container {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow-x: auto;
+  box-shadow: var(--shadow-md);
+}
+
+.admin-table {
+  width: 100%;
+  border-collapse: collapse;
+  text-align: left;
+  font-size: 0.92rem;
+}
+
+.admin-table th {
+  background: rgba(6, 14, 26, 0.8);
+  padding: 1rem 1.2rem;
+  color: var(--gold-primary);
+  font-weight: 700;
+  text-transform: uppercase;
+  font-size: 0.78rem;
+  letter-spacing: 0.06em;
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.admin-table td {
+  padding: 1.2rem;
+  border-bottom: 1px solid rgba(255, 255, 255, 0.04);
+  vertical-align: middle;
+}
+
+.admin-table tr:hover td {
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.table-thumb {
+  width: 60px;
+  height: 44px;
+  border-radius: var(--radius-sm);
+  object-fit: cover;
+  background: #0a1728;
+}
+
+.badge-status {
+  padding: 0.25rem 0.6rem;
+  border-radius: var(--radius-full);
+  font-size: 0.74rem;
+  font-weight: 700;
+  text-transform: uppercase;
+}
+
+.status-published {
+  background: rgba(34, 197, 94, 0.15);
+  color: #4ade80;
+  border: 1px solid rgba(34, 197, 94, 0.3);
+}
+
+.status-draft {
+  background: rgba(234, 179, 8, 0.15);
+  color: #facc15;
+  border: 1px solid rgba(234, 179, 8, 0.3);
+}
+
+.action-buttons {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.btn-icon {
+  width: 34px;
+  height: 34px;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+  background: rgba(255, 255, 255, 0.04);
+  color: #cbd5e1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: var(--transition);
+  font-size: 0.9rem;
+}
+
+.btn-icon:hover {
+  background: var(--gold-primary);
+  color: var(--bg-primary);
+  border-color: var(--gold-primary);
+}
+
+.btn-icon.btn-delete:hover {
+  background: #ef4444;
+  color: #fff;
+  border-color: #ef4444;
+}
+
+/* Modali di Inserimento / Modifica */
+.admin-modal-window {
+  max-width: 780px;
+}
+
+.form-grid-2 {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1.2rem;
+}
+
+.img-preset-selector {
+  display: flex;
+  gap: 0.8rem;
+  margin-top: 0.5rem;
+  overflow-x: auto;
+  padding-bottom: 0.4rem;
+}
+
+.img-preset-item {
+  width: 90px;
+  height: 60px;
+  border-radius: var(--radius-sm);
+  border: 2px solid transparent;
+  cursor: pointer;
+  overflow: hidden;
+  flex-shrink: 0;
+  transition: var(--transition);
+}
+
+.img-preset-item:hover, .img-preset-item.selected {
+  border-color: var(--gold-primary);
+  transform: scale(1.05);
+  box-shadow: 0 4px 12px rgba(212, 175, 55, 0.3);
+}
+
+.img-preset-item img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* Strumenti & Backup Tab */
+.backup-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+  gap: 2rem;
+}
+
+.tool-card {
+  background: var(--bg-card);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  padding: 2.2rem;
+  display: flex;
+  flex-direction: column;
+  gap: 1.2rem;
+}
+
+.tool-card h4 {
+  font-size: 1.25rem;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 0.6rem;
+}
