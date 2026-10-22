@@ -1,0 +1,3 @@
+User-agent: *
+Disallow:
+Sitemap: https://SoboAstral.github.io/sitemap.xml

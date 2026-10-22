@@ -1,0 +1,13 @@
+{
+    "version": "https://jsonfeed.org/version/1",
+    "title": "AigeProva",
+    "description": "",
+    "home_page_url": "https://SoboAstral.github.io",
+    "feed_url": "https://SoboAstral.github.io/feed.json",
+    "user_comment": "",
+    "author": {
+        "name": "Aige"
+    },
+    "items": [
+    ]
+}
